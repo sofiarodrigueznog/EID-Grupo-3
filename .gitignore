@@ -1,0 +1,14 @@
+# Entorno virtual
+.venv/
+venv/
+
+# Salida de Manim (se regenera al renderizar)
+media/
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db

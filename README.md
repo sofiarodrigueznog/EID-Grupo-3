@@ -55,14 +55,14 @@ requirements.txt dependencias con versiones fijas
 | Cairo y Pango | las que instale el gestor de paquetes (FFmpeg ya viene incluido con Manim) |
 | LaTeX (para `MathTex`) | MacTeX / MiKTeX / TeX Live |
 
-Manim requiere Python 3.11 o superior. Usamos 3.12 para que todo el grupo tenga la misma versión.
+Manim requiere Python 3.11 o superior. Usamos 3.12 para que todo el grupo tenga la misma versión; queda fijada en `.python-version` y Manim en `requirements.txt`.
 
 ## Instalación
 
 **macOS**
 
 ```bash
-brew install python@3.12 py3cairo pango pkg-config
+brew install python@3.12 cairo pango pkg-config
 brew install --cask mactex-no-gui
 ```
 
@@ -71,7 +71,7 @@ brew install --cask mactex-no-gui
 **Linux (Debian/Ubuntu)**
 
 ```bash
-sudo apt install python3.12-venv build-essential libcairo2-dev libpango1.0-dev texlive texlive-latex-extra
+sudo apt install python3.12-venv build-essential libcairo2-dev libpango1.0-dev pkg-config texlive texlive-latex-extra
 ```
 
 **Entorno del proyecto (todos los sistemas)**
