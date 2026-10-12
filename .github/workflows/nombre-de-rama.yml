@@ -1,0 +1,22 @@
+name: Validar rama y PR
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  nombre-de-rama:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar formato EID-X/descripcion
+        env:
+          RAMA: ${{ github.head_ref }}
+        run: |
+          if [[ "$RAMA" =~ ^EID-[0-9]+/[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
+            echo "✅ Rama '$RAMA' cumple el formato."
+          else
+            echo "::error::La rama '$RAMA' no cumple el formato EID-<número>/<descripcion-en-minusculas> (ej: EID-1/teoria-del-tema)."
+            echo "Renómbrala con: git branch -m EID-<n>/<descripcion> && git push -u origin EID-<n>/<descripcion>"
+            exit 1
+          fi
