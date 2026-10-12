@@ -1,0 +1,2 @@
+# Python 3.12 (ver .python-version)
+manim==0.22.0
