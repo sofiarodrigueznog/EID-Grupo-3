@@ -4,11 +4,8 @@
 
 1. Stewart, J. (2012). *Cálculo de una variable. Trascendentes tempranas*
    (7.ª ed.; M. C. Rodríguez Pedroza, trad.). Cengage Learning.
-   ISBN 978-607-481-881-9.Secciones consultadas: 5.1 "Áreas y distancias" (p. 360) y 5.2 "La integral definida" (p. 371).
+   ISBN 978-607-481-881-9. Secciones consultadas: 5.1 "Áreas y distancias" (p. 360) y 5.2 "La integral definida" (p. 371).
    Se utiliza para el planteamiento del problema del área mediante rectángulos y para la definición de la integral como límite de sumas de Riemann.
-   Nota: copia digital consultada el 12 de octubre de 2026 en
-   https://www.cozing.com.bo/uploads/document/file/7/15594248204566.pdf.
-   No corresponde a una versión oficial de la editorial, por lo que se indica solo para facilitar la verificación.
 
 2. Strang, G., Herman, E. et al. (2022). *Cálculo*, vol. 1, §5.1
    "Aproximación de áreas". OpenStax.
@@ -16,7 +13,7 @@
    Se utiliza para las aproximaciones con extremos izquierdos y derechos, y para las fórmulas de sumas de potencias, que permiten expresar la suma de Riemann en función de n.
 
 3. (Complementaria) Sanderson, G. [3Blue1Brown]. (2017, 5 de mayo).
-   *Integration and the fundamental theorem of calculus |Chapter 8,Essence of calculus* [Video]. YouTube.
+   *Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus* [Video]. YouTube.
    Enlace: https://www.youtube.com/watch?v=rfG8ce4nNh0
    Se utiliza como referencia visual para la explicación del área bajo una curva mediante rectángulos (minutos 8:20 a 11:18).
    Nota: El video está en inglés. Se recomienda cambiar el audio a español desde la configuración de YouTube.
@@ -32,6 +29,6 @@ Se utiliza como base conceptual común del proyecto.
 
 The Manim Community Developers. (s. f.). *CoordinateSystem* (Versión 0.22.0)
 [Documentación]. Manim Community Documentation.
-Recuperado el 12 de octubre de 2026, de
+Recuperado el 12 de octubre de 2026.
 Enlace: https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html
-Se consulta para la construcción de los rectángulos de las sumas de Riemann en las escenas mediante. `get_riemann_rectangles`.
+Se consulta para la construcción de los rectángulos de las sumas de Riemann en las escenas mediante `get_riemann_rectangles`.
