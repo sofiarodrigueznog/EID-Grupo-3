@@ -1,4 +1,4 @@
-# Teoría del tema: partición, \Delta x y refinamiento
+# Teoría del tema: partición, Δx y refinamiento
 
 ## 1. El problema de aproximar un área
 
@@ -28,10 +28,17 @@ En este caso, los puntos de la partición se pueden escribir de la siguiente man
 
 $$x_i=a+i\Delta x,\qquad i=0,1,\dots,n$$
 
-Por ejemplo, si $[a,b]=[0,4]$ y $n=4$, entonces: $$\Delta x=\frac{(4-0)}4=1$$Y la partición es $0,1,2,3,4$. Son 4 subintervalos y 5 puntos.
+Por ejemplo, si $[a,b]=[0,4]$ y $n=4$, entonces:
 
-Si se mantiene el mismo intervalo y se aumenta a n=8, el ancho pasa a ser \Delta x=1/2: hay más subintervalos, pero cada uno es más angosto.  
-$$\Delta x=\frac{(4-0)}8=\frac{1}2$$Y la partición es $0,\frac12,1,\frac32,2,\frac52,3,\frac72,4$. Por lo que son 8 subintervalos y 9 puntos.
+$$\Delta x=\frac{4-0}{4}=1$$
+
+Y la partición es $0,1,2,3,4$. Son 4 subintervalos y 5 puntos.
+
+Si se mantiene el mismo intervalo y se aumenta a $n=8$, el ancho pasa a ser $\Delta x=\frac12$: hay más subintervalos, pero cada uno es más angosto.
+
+$$\Delta x=\frac{4-0}{8}=\frac{1}{2}$$
+
+Y la partición es $0,\frac12,1,\frac32,2,\frac52,3,\frac72,4$. Por lo que son 8 subintervalos y 9 puntos.
 
 ## 3. Punto muestra y altura de los rectángulos
 
@@ -42,24 +49,25 @@ $$x_i^*\in[x_{i-1},x_i]$$
 Para obtener la _altura del rectángulo_, evaluamos la función en el punto muestra. Es decir, la altura será $f(x_i^*)$. Como la _base del rectángulo_ mide $\Delta x$, su área con signo se calcula multiplicando la altura por la base:
 
 $$f(x_i^*)\Delta x$$
+
 Podemos escoger los puntos muestra de distintas maneras. Por ejemplo:
 
 - **Extremos izquierdos:** se utiliza el _extremo izquierdo_ de cada subintervalo, es decir, $x_i^*=x_{i-1}$.  
     
 - **Extremos derechos:** se utiliza el _extremo derecho_, es decir, $x_i^*=x_i$.  
     
-- **Puntos medios:** se utiliza el punto que está justo en la _mitad del subintervalo_, es decir,                   $x_i^*=\frac{x_{i-1}+x_i}{2}.$  
+- **Puntos medios:** se utiliza el punto que está justo en la _mitad del subintervalo_, es decir, $x_i^*=\frac{x_{i-1}+x_i}{2}$.  
     
 
 La elección del punto muestra puede cambiar el resultado de la aproximación, aunque utilicemos la misma cantidad de subintervalos. Lo importante es que el punto que escojamos esté _dentro del subintervalo correspondiente_.
 
-## 4. Suma de Riemann S_n
+## 4. Suma de Riemann $S_n$
 
 Si sumamos las áreas con signo de los n rectángulos, obtenemos una **suma de Riemann**:
 
 $$S_n=\sum_{i=1}^{n}f(x_i^*)\Delta x$$
 
-Para una _partición regular_, sabemos que el _ancho de cada subintervalo_ es \Delta x=\frac{b-a}{n}. Si además utilizamos los extremos derechos como puntos muestra, podemos escribir la suma de Riemann de la siguiente manera:
+Para una _partición regular_, sabemos que el _ancho de cada subintervalo_ es $\Delta x=\frac{b-a}{n}$. Si además utilizamos los extremos derechos como puntos muestra, podemos escribir la suma de Riemann de la siguiente manera:
 
 $$S_n=\sum_{i=1}^{n} f\left(a+i\frac{b-a}{n}\right) \frac{b-a}{n}$$
 
@@ -69,7 +77,7 @@ El resultado de la suma depende de la _cantidad de subintervalos_ que utilicemos
 
 Por ejemplo, $S_4, S_8, S_{16}$ y $S_{32}$ representan aproximaciones de la misma integral, aunque en general sus resultados serán distintos. Esto ocurre porque, a medida que aumenta n, también aumenta la cantidad de rectángulos y disminuye el _ancho de cada uno_.
 
-## 5. Refinamiento: $n\to\infty y \Delta x\to 0$
+## 5. Refinamiento: $n\to\infty$ y $\Delta x\to 0$
 
 _Refinar una partición_ significa dividir el mismo intervalo en más subintervalos. Para hacerlo, aumentamos n, pero mantenemos _fijo el intervalo_ $[a,b]$.
 
@@ -87,12 +95,11 @@ No significa que tengamos que construir literalmente infinitos rectángulos. La 
 
 Cuando la función es _integrable_ en $[a,b]$, las sumas de Riemann se acercan a un mismo valor a medida que el ancho de los subintervalos tiende a cero. Ese valor corresponde a la **integral definida**:
 
-$$  
-\int_a^b f(x),dx  
-=\lim_{n\to\infty}S_n  
-=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_i^*)\Delta x  
-$$
-- $\displaystyle \int_a^b f(x)\,dx$: la integral definida.
+```math
+\int_a^b f(x)\,dx=\lim_{n\to\infty}S_n=\lim_{n\to\infty}\sum_{i=1}^{n}f(x_i^*)\Delta x
+```
+
+- $\displaystyle \int_a^b f(x)\ dx$: la integral definida.
     
 - $\displaystyle \lim_{n\to\infty}S_n$: el valor al que se acerca la suma de Riemann cuando aumenta la cantidad de subintervalos.
     
