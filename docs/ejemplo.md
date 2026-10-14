@@ -12,7 +12,7 @@ en el intervalo cerrado $[0,2]$. Primero, podemos calcular el valor exacto de la
 
 $$  
 \begin{aligned}  
-\int_0^2(x^2+1),dx  
+\int_0^2(x^2+1)\ dx  
 &=\left[\frac{x^3}{3}+x\right]_0^2\  
 &=\frac{8}{3}+2\  
 &=\frac{14}{3}\  
