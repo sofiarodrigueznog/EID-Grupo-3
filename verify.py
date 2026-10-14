@@ -98,13 +98,16 @@ def error_teorico(n: int) -> Fraction:
     return Fraction(2, 3 * n * n)
 
 
-def obtener_datos_tabla() -> dict:
+def obtener_datos_tabla(n_valores: list[int] | None = None) -> dict:
     """
     Retorna un diccionario con los resultados calculados para cada n.
     Estructurado para su consumo directo en pruebas de Manim (EID-11) y Ficha PDF (EID-21).
+    Admite una lista personalizada de valores de n o usa N_VALORES por defecto.
     """
+    if n_valores is None:
+        n_valores = N_VALORES
     datos = {}
-    for n in N_VALORES:
+    for n in n_valores:
         delta = (B - A) / n
         sn = suma_riemann_discreta(n)
         err = VALOR_EXACTO - sn
@@ -155,8 +158,14 @@ def ejecutar_auditoria() -> bool:
             todos_ok = False
             continue
 
-        # Validación 3: Error teórico exacto
+        # Validación 3: Error teórico exacto vs. cálculo directo vs. docs
         err_calculado = VALOR_EXACTO - s_disc
+        err_teor = error_teorico(n)
+        if err_calculado != err_teor:
+            print(f"  [ERROR] n={n}: Error calculado ({err_calculado}) != Error teórico ({err_teor})")
+            todos_ok = False
+            continue
+
         if err_calculado != esperado["err_frac"]:
             print(f"  [ERROR] n={n}: Error calculado ({err_calculado}) != Documentado ({esperado['err_frac']})")
             todos_ok = False
@@ -186,7 +195,16 @@ def ejecutar_auditoria() -> bool:
     limite = VALOR_EXACTO
     print(f"  * Integral definida exacta: 14/3 ≈ {a_decimal_str(limite, 6)}")
     print(f"  * Límite analítico: lim_{{n->inf}} (14/3 - 2/(3n^2)) = 14/3")
-    print(f"  * Monotonía del error: {datos[4]['err_frac']} > {datos[8]['err_frac']} > {datos[16]['err_frac']} > {datos[32]['err_frac']} (Convergencia monótona)")
+
+    # Validación lógica de monotonía estricta del error
+    errores = [datos[n]["err_frac"] for n in N_VALORES]
+    es_monotona = all(errores[i] > errores[i + 1] for i in range(len(errores) - 1))
+    if not es_monotona:
+        print("  [ERROR] La convergencia del error no es monótona decreciente.")
+        todos_ok = False
+    else:
+        cadena_monotonia = " > ".join(str(datos[n]["err_frac"]) for n in N_VALORES)
+        print(f"  * Monotonía del error: {cadena_monotonia} (Convergencia monótona validada)")
     print()
 
     if todos_ok:
