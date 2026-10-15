@@ -97,9 +97,11 @@ Ambos comandos se corren desde la raíz del repositorio. `python tests/test_conf
 ## Renderizar
 
 ```bash
-manim -pql scenes/escena1_construccion.py Escena1Construccion   # vista previa rápida (480p)
-manim -pqh scenes/escena1_construccion.py Escena1Construccion   # calidad final (1080p)
+python -m manim -pql scenes/escena1_construccion.py Escena1Construccion   # vista previa rápida (480p)
+python -m manim -pqh scenes/escena1_construccion.py Escena1Construccion   # calidad final (1080p)
 ```
+
+Se ejecuta desde la raíz del repositorio y con `python -m manim`, no solo `manim`: las escenas importan `scenes.config`, y el comando `manim` por sí solo falla con `No module named 'scenes'`.
 
 `-p` abre el video al terminar, `-ql` renderiza en baja calidad y `-qh` en alta. Los videos quedan en `media/videos/`. Para las escenas 2 y 3 se cambia el archivo y la clase (`escena2_refinamiento.py` → `Escena2Refinamiento`, `escena3_integral.py` → `Escena3Integral`).
 
