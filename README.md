@@ -42,6 +42,7 @@ Todas las escenas leen la función, el intervalo, la lista de n y el criterio de
 scenes/          escenas de Manim y config.py con los parámetros del ejemplo
 docs/            teoría, ejemplo, referencias y declaración de uso de IA
 assets/          imágenes y recursos del video
+tests/           pruebas automáticas de scenes/config.py
 verify.py        verificación independiente de los valores de S_n
 requirements.txt dependencias con versiones fijas
 ```
@@ -81,6 +82,17 @@ python3.12 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+## Verificar los cálculos
+
+Antes de renderizar, comprueba que los parámetros y los valores de $S_n$ sigan siendo correctos:
+
+```bash
+python -m unittest discover -s tests   # pruebas de scenes/config.py
+python verify.py                      # recalcula S_n y lo compara con docs/ejemplo.md
+```
+
+Ambos comandos se corren desde la raíz del repositorio. `python tests/test_config.py` no funciona, porque desde ahí Python no encuentra la carpeta `scenes`.
 
 ## Renderizar
 
