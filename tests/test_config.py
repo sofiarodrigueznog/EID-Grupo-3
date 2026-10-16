@@ -28,6 +28,13 @@ class TestConfig(unittest.TestCase):
             "center"
         )
 
+    def test_integral_exacta(self):
+        self.assertAlmostEqual(
+            cfg.integral_exacta,
+            14 / 3,
+            places=10
+        )
+
     def test_delta_x(self):
         esperados = [0.5, 0.25, 0.125, 0.0625]
 
@@ -63,30 +70,25 @@ class TestConfig(unittest.TestCase):
         }
 
         for n, esperado in resultados.items():
-
-            suma = sum(
-                cfg.f(cfg.sample_x(i, n))
-                * cfg.delta_x(n)
-                for i in range(n)
-            )
-
+            suma = cfg.riemann_sum(n)
             self.assertAlmostEqual(
                 suma, esperado, places=10
             )
 
     def test_formula_general(self):
         for n in cfg.n_values:
-
-            suma = sum(
-                cfg.f(cfg.sample_x(i, n))
-                * cfg.delta_x(n)
-                for i in range(n)
-            )
-
-            formula = 14 / 3 - 2 / (3 * n**2)
-
+            suma = cfg.riemann_sum(n)
+            formula = cfg.suma_analitica(n)
             self.assertAlmostEqual(
                 suma, formula, places=10
+            )
+
+    def test_error_analitico(self):
+        for n in cfg.n_values:
+            error = cfg.error_analitico(n)
+            esperado = abs(cfg.integral_exacta - cfg.suma_analitica(n))
+            self.assertAlmostEqual(
+                error, esperado, places=10
             )
 
     def test_parametros_invalidos(self):
@@ -95,6 +97,12 @@ class TestConfig(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             cfg.sample_x(4, 4)
+
+        with self.assertRaises(ValueError):
+            cfg.suma_analitica(0)
+
+        with self.assertRaises(ValueError):
+            cfg.error_analitico(0)
 
 
 if __name__ == "__main__":
