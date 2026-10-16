@@ -172,6 +172,16 @@ class Escena3Integral(Scene):
             run_time=1.8,
         )
         self.play(FadeIn(correspondencia), run_time=1.2)
+
+        # El ancho de los rectángulos tiende a cero cuando n crece
+        delta_x_cero = MathTex(
+            fr"\Delta x=\frac{{{b - a:g}}}{{n}}\longrightarrow 0"
+            r"\quad \text{cuando } n \to \infty",
+            font_size=22,
+            color=TEAL_C,
+        ).next_to(correspondencia, DOWN, buff=0.15)
+
+        self.play(FadeIn(delta_x_cero), run_time=1.0)
         self.wait(1.0)
 
         # =====================================================================
@@ -182,7 +192,7 @@ class Escena3Integral(Scene):
             font_size=21,
             color=BLUE_B,
             weight=BOLD,
-        ).next_to(correspondencia, DOWN, buff=0.28)
+        ).next_to(delta_x_cero, DOWN, buff=0.28)
 
         formula_sn = MathTex(
             r"S_n = \frac{14}{3} - \frac{2}{3n^2}",
@@ -218,6 +228,7 @@ class Escena3Integral(Scene):
             encabezado_bloque1,
             formula_integral,
             correspondencia,
+            delta_x_cero,
             encabezado_bloque2,
             formula_sn,
             limite_sn,
@@ -243,7 +254,7 @@ class Escena3Integral(Scene):
         )
 
         pregunta = Text(
-            "«¿Por qué una suma de Riemann aproxima cada vez\nmejor una región al aumentar los rectángulos?»",
+            "«¿Por qué una suma de Riemann puede aproximar cada vez mejor\nuna región cuando aumentamos el número de rectángulos?»",
             font_size=16,
             color=GRAY_A,
             line_spacing=1.1,
