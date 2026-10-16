@@ -3,7 +3,7 @@
 from manim import *
 from decimal import Decimal, ROUND_HALF_UP
 from scenes.config import (
-    f, a, b, n_values, sample_type, delta_x, sample_x,     #Importa la función y valores definidos en config.py
+    f, a, b, n_values, sample_type, delta_x, sample_x, riemann_sum,
 )
 
 
@@ -16,11 +16,7 @@ class Escena2Refinamiento(Scene):
             raise ValueError("EID-9 utiliza puntos medios")
 
         def calcular_suma(n):
-            ancho = delta_x(n)
-            return sum(
-                f(sample_x(i, n)) * ancho
-                for i in range(n)
-            )
+            return riemann_sum(n)
 
         def formatear_suma(valor):
             """Redondeo decimal para coincidir con docs/ejemplo.md."""
@@ -37,7 +33,7 @@ class Escena2Refinamiento(Scene):
         ).to_edge(UP, buff=0.25)
 
         subtitulo = MathTex(
-            r"f(x)=x^2+1,\quad [0,2]",
+            fr"f(x)=x^2+1,\quad [{a:g},{b:g}]",
             font_size=29,
         ).next_to(titulo, DOWN, buff=0.17)
 

@@ -1,4 +1,3 @@
-
 """
 EID-7: Parámetros matemáticos centralizados.
 
@@ -85,3 +84,38 @@ def sample_x(i: int, n: int) -> float:
         raise ValueError("Criterio de muestreo inválido")
 
     return a + (i + offsets[sample_type]) * delta_x(n)
+
+
+
+# 8. Suma de Riemann numérica centralizada
+
+def riemann_sum(n: int) -> float:
+    """
+    Calcula la suma de Riemann numérica para n subintervalos
+    utilizando la función f y el criterio de muestreo configurado.
+    """
+    dx = delta_x(n)
+    return sum(f(sample_x(i, n)) * dx for i in range(n))
+
+
+
+# 9. Deducción analítica cerrada (Paulo)
+
+def suma_analitica(n: int) -> float:
+    """
+    Fórmula analítica cerrada de Paulo: S_n = 14/3 - 2/(3n²).
+    Permite contrastar numéricamente la suma sin aproximación discreta.
+    """
+    if n <= 0:
+        raise ValueError("n debe ser positivo")
+    return (14 / 3) - 2 / (3 * (n**2))
+
+
+def error_analitico(n: int) -> float:
+    """
+    Término de error analítico: |14/3 - S_n| = 2/(3n²).
+    Demuestra la convergencia monótona hacia cero a medida que n -> ∞.
+    """
+    if n <= 0:
+        raise ValueError("n debe ser positivo")
+    return 2 / (3 * (n**2))

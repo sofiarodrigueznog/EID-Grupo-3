@@ -250,8 +250,8 @@ class Escena1Construccion(Scene):
         # 8. Resultado de la suma de Riemann
 
         resultado = MathTex(
-            fr"S_{{{n}}}={suma:.3f}",
-            font_size=40,
+            fr"S_{{{n}}}={suma:.6f}",
+            font_size=37,
             color=YELLOW
         )
 
