@@ -9,10 +9,11 @@ un menú interactivo en consola.
 
 Uso CLI rápido:
     python render.py 1              # Escena 1 en 480p (-pql)
-    python render.py 2 -h           # Escena 2 en 1080p (-pqh)
+    python render.py 2 -H           # Escena 2 en 1080p (-pqh)
     python render.py 3 --high       # Escena 3 en 1080p (-pqh)
     python render.py verify         # Ejecutar auditoría matemática
     python render.py test           # Ejecutar pruebas unitarias
+    python render.py -h             # Muestra la ayuda
     python render.py                # Modo menú interactivo
 """
 
@@ -49,6 +50,8 @@ SCENES = {
     },
 }
 
+_PYTHON_RESOLVED = None
+
 
 def get_subprocess_env():
     """Genera variables de entorno asegurando que la raíz esté en PYTHONPATH."""
@@ -67,20 +70,30 @@ def resolve_python():
     Usa sys.executable, y si no está en un venv pero existe .venv local,
     informa y prefiere el del venv.
     """
-    # Si ya estamos en un venv o el actual funciona, retornar sys.executable
+    global _PYTHON_RESOLVED
+    if _PYTHON_RESOLVED is not None:
+        return _PYTHON_RESOLVED
+
+    # Si ya estamos en un venv activo, usar sys.executable
     if getattr(sys, "base_prefix", sys.prefix) != sys.prefix:
-        return sys.executable
+        _PYTHON_RESOLVED = sys.executable
+        return _PYTHON_RESOLVED
 
     # Si se ejecutó con el python del sistema pero existe un .venv local
     venv_unix = PROJECT_ROOT / ".venv" / "bin" / "python"
     venv_win = PROJECT_ROOT / ".venv" / "Scripts" / "python.exe"
 
     if venv_unix.is_file():
-        return str(venv_unix)
+        print(f"[INFO] Utilizando entorno virtual local detectado: {venv_unix}")
+        _PYTHON_RESOLVED = str(venv_unix)
+        return _PYTHON_RESOLVED
     if venv_win.is_file():
-        return str(venv_win)
+        print(f"[INFO] Utilizando entorno virtual local detectado: {venv_win}")
+        _PYTHON_RESOLVED = str(venv_win)
+        return _PYTHON_RESOLVED
 
-    return sys.executable
+    _PYTHON_RESOLVED = sys.executable
+    return _PYTHON_RESOLVED
 
 
 def render_scene(scene_num: int, high_quality: bool = False, preview: bool = True) -> int:
@@ -162,7 +175,7 @@ def interactive_menu():
         try:
             choice = input("Seleccione una opción [0-6]: ").strip()
         except (KeyboardInterrupt, EOFError):
-            print("\nOperación cancelada.")
+            print("\nOperación cancelada por el usuario.")
             return 0
 
         if choice == "0":
@@ -171,9 +184,13 @@ def interactive_menu():
         elif choice in ("1", "2", "3"):
             scene_num = int(choice)
             high, preview = prompt_quality()
+            if high is None:
+                continue
             render_scene(scene_num, high_quality=high, preview=preview)
         elif choice == "4":
             high, preview = prompt_quality()
+            if high is None:
+                continue
             for s_num in (1, 2, 3):
                 if SCENES[s_num]["file"].is_file():
                     ret = render_scene(s_num, high_quality=high, preview=preview)
@@ -200,7 +217,8 @@ def prompt_quality():
     try:
         q_choice = input("Opción [1-4] (por defecto 1): ").strip()
     except (KeyboardInterrupt, EOFError):
-        return False, True
+        print("\n[AVISO] Selección cancelada por el usuario.")
+        return None, None
 
     if q_choice == "2":
         return True, True
@@ -225,17 +243,19 @@ Comandos y escenas disponibles:
   test              Ejecuta las pruebas unitarias en tests/.
 
 Opciones:
-  -h, --high        Renderiza en alta resolución 1080p (-pqh).
-                    (Por defecto se renderiza en 480p -pql para agilidad).
+  -H, --high        Renderiza en alta resolución 1080p (-pqh).
+                    (También se acepta -h si se especifica número de escena, ej: 'render.py 1 -h').
   --no-preview, -np No abre automáticamente el reproductor de video (-ql / -qh).
-  --help            Muestra esta ayuda.
+  -h, --help        Muestra esta ayuda.
 
 Ejemplos:
   python render.py 1              # Escena 1 en 480p con preview
+  python render.py 2 -H           # Escena 2 en 1080p con preview
   python render.py 2 -h           # Escena 2 en 1080p con preview
   python render.py 2 --high -np   # Escena 2 en 1080p sin abrir ventana
   python render.py verify         # Verificación matemática
   python render.py test           # Pruebas unitarias
+  python render.py -h             # Muestra esta ayuda
   python render.py                # Menú interactivo
 """)
 
@@ -243,22 +263,28 @@ Ejemplos:
 def parse_cli_args(args):
     """
     Parsea los argumentos CLI considerando compatibilidad con:
-    -h / --high para alta calidad (evitando conflicto con --help).
+    -h para ayuda estándar cuando no hay escena especificada,
+    o como alias de alta calidad cuando acompaña a una escena.
     """
     if not args:
         return interactive_menu()
 
+    # Si el usuario ejecuta explícitamente ayuda
     if "--help" in args or "help" in args:
         print_help()
         return 0
 
+    # Extraer banderas y objetivo
     high_quality = False
     preview = True
     target = None
+    has_h_flag = False
 
     for arg in args:
-        if arg in ("-h", "--high"):
+        if arg in ("-H", "--high"):
             high_quality = True
+        elif arg == "-h":
+            has_h_flag = True
         elif arg in ("-np", "--no-preview"):
             preview = False
         elif target is None:
@@ -267,6 +293,14 @@ def parse_cli_args(args):
             print(f"[ERROR] Argumento desconocido o duplicado: '{arg}'")
             print_help()
             return 1
+
+    # Si se pasó -h sin ningún objetivo (ej: python render.py -h), mostrar ayuda
+    if has_h_flag:
+        if target is None:
+            print_help()
+            return 0
+        else:
+            high_quality = True
 
     if target is None:
         return interactive_menu()
