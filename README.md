@@ -43,6 +43,7 @@ scenes/          escenas de Manim y config.py con los parámetros del ejemplo
 docs/            teoría, ejemplo, referencias y declaración de uso de IA
 assets/          imágenes y recursos del video
 tests/           pruebas automáticas de scenes/config.py
+render.py        atajo para renderizar las escenas, correr las pruebas y verify.py
 verify.py        verificación independiente de los valores de S_n
 requirements.txt dependencias con versiones fijas
 ```
@@ -94,7 +95,23 @@ python verify.py                      # recalcula S_n y lo compara con docs/ejem
 
 Ambos comandos se corren desde la raíz del repositorio. `python tests/test_config.py` no funciona, porque desde ahí Python no encuentra la carpeta `scenes`.
 
+También se pueden correr con `render.py`: `python render.py test` y `python render.py verify`.
+
 ## Renderizar
+
+La forma más simple es con `render.py`, desde la raíz del repositorio:
+
+```bash
+python render.py 1          # escena 1 en 480p, abre el video al terminar
+python render.py 2 -H       # escena 2 en 1080p (calidad final)
+python render.py all -H     # las tres escenas en 1080p
+python render.py 3 -np      # escena 3 sin abrir el reproductor
+python render.py            # menú interactivo
+```
+
+`python render.py --help` muestra todas las opciones. Si hay un `.venv` en la raíz, `render.py` lo usa solo.
+
+También se puede llamar a Manim directamente:
 
 ```bash
 python -m manim -pql scenes/escena1_construccion.py Escena1Construccion   # vista previa rápida (480p)
