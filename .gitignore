@@ -9,6 +9,8 @@ media/
 __pycache__/
 *.pyc
 
-# Sistema
+# Sistema y editores
 .DS_Store
 Thumbs.db
+.obsidian/
+
