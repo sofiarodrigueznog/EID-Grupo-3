@@ -32,3 +32,7 @@ The Manim Community Developers. (s. f.). *CoordinateSystem* (Versión 0.22.0)
 Recuperado el 12 de octubre de 2026.
 Enlace: https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html
 Se consulta para la construcción de los rectángulos de las sumas de Riemann en las escenas mediante `get_riemann_rectangles`.
+
+## Declaración de uso de Inteligencia Artificial
+
+El registro detallado y transparente del uso de herramientas de Inteligencia Artificial por parte de cada integrante se encuentra documentado en [declaracion_ia.md](declaracion_ia.md).
