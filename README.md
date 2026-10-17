@@ -42,6 +42,8 @@ Todas las escenas leen la función, el intervalo, la lista de n y el criterio de
 scenes/          escenas de Manim y config.py con los parámetros del ejemplo
 docs/            teoría, ejemplo, referencias y declaración de uso de IA
 assets/          imágenes y recursos del video
+tests/           pruebas automáticas de scenes/config.py
+render.py        atajo para renderizar las escenas, correr las pruebas y verify.py
 verify.py        verificación independiente de los valores de S_n
 requirements.txt dependencias con versiones fijas
 ```
@@ -82,12 +84,41 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Renderizar
+## Verificar los cálculos
+
+Antes de renderizar, comprueba que los parámetros y los valores de $S_n$ sigan siendo correctos:
 
 ```bash
-manim -pql scenes/escena1_construccion.py Escena1Construccion   # vista previa rápida (480p)
-manim -pqh scenes/escena1_construccion.py Escena1Construccion   # calidad final (1080p)
+python -m unittest discover -s tests   # pruebas de scenes/config.py
+python verify.py                      # recalcula S_n y lo compara con docs/ejemplo.md
 ```
+
+Ambos comandos se corren desde la raíz del repositorio. `python tests/test_config.py` no funciona, porque desde ahí Python no encuentra la carpeta `scenes`.
+
+También se pueden correr con `render.py`: `python render.py test` y `python render.py verify`.
+
+## Renderizar
+
+La forma más simple es con `render.py`, desde la raíz del repositorio:
+
+```bash
+python render.py 1          # escena 1 en 480p, abre el video al terminar
+python render.py 2 -H       # escena 2 en 1080p (calidad final)
+python render.py all -H     # las tres escenas en 1080p
+python render.py 3 -np      # escena 3 sin abrir el reproductor
+python render.py            # menú interactivo
+```
+
+`python render.py --help` muestra todas las opciones. Si hay un `.venv` en la raíz, `render.py` lo usa solo.
+
+También se puede llamar a Manim directamente:
+
+```bash
+python -m manim -pql scenes/escena1_construccion.py Escena1Construccion   # vista previa rápida (480p)
+python -m manim -pqh scenes/escena1_construccion.py Escena1Construccion   # calidad final (1080p)
+```
+
+Se ejecuta desde la raíz del repositorio y con `python -m manim`, no solo `manim`: las escenas importan `scenes.config`, y el comando `manim` por sí solo falla con `No module named 'scenes'`.
 
 `-p` abre el video al terminar, `-ql` renderiza en baja calidad y `-qh` en alta. Los videos quedan en `media/videos/`. Para las escenas 2 y 3 se cambia el archivo y la clase (`escena2_refinamiento.py` → `Escena2Refinamiento`, `escena3_integral.py` → `Escena3Integral`).
 
