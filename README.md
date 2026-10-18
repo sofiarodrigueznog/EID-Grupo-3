@@ -26,6 +26,14 @@ y comparamos los valores numéricos de cada suma para ver cómo se acercan entre
 
 > ¿Por qué una suma de Riemann puede aproximar cada vez mejor una región cuando aumentamos el número de rectángulos?
 
+## Documentación
+
+- [Teoría del tema](docs/teoria.md): partición, $\Delta x$, punto muestra, suma de Riemann y paso al límite.
+- [Ejemplo propio](docs/ejemplo.md): condiciones, cálculo de $S_n$ para $n=4,8,16,32$, deducción de la fórmula de $S_n$ y comparación con el valor exacto.
+- [Guion con notas matemáticas](docs/guion.md): narración del video por integrante.
+- [Referencias](docs/referencias.md): fuentes matemáticas, apunte base y documentación de Manim.
+- [Declaración de uso de IA](docs/declaracion_ia.md): herramientas, finalidad, partes apoyadas y verificación.
+
 ## Escenas
 
 | Escena | Contenido | Ticket |
