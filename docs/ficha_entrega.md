@@ -5,9 +5,9 @@
 **Tema:** Eje 3 · Aproximación y refinamiento — *«De pocos rectángulos a una mejor aproximación»*  
 **Integrantes:**  
 - **Denys Sofía Rodríguez Noguera** (`@sofiarodrigueznog`) — *Líder / Revisión e integración del video*  
-- **Paulo Villalobos Aravena** (`@notKechai`) — *Matemática y explicación*  
+- **Paulo Villalobos Aravena** (`@notKechai`) — *Matemática y explicación teórica*  
 - **Antonio Ignacio Lara Fuentealba** (`@alara2024uct`) — *Visualización y código Manim*  
-- **Renato Misrrain Carrasco Oviedo** (`@RCarrascoO`) — *Apoyo matemática, visualización y auditoría*  
+- **Renato Misrrain Carrasco Oviedo** (`@RCarrascoO`) — *Apoyo matemático, visualización y auditoría*  
 
 **Fecha de entrega:** 18 de octubre de 2026  
 
@@ -21,26 +21,26 @@
 | **Número de Grupo** | Grupo 3 (`G03`) |
 | **Integrantes del Equipo** | Denys Sofía Rodríguez Noguera, Paulo Villalobos Aravena, Antonio Ignacio Lara Fuentealba y Renato Misrrain Carrasco Oviedo |
 | **Repositorio Público de GitHub** | [https://github.com/sofiarodrigueznog/EID-Grupo-3](https://github.com/sofiarodrigueznog/EID-Grupo-3) |
-| **SHA del Commit Entregado** | `[PENDIENTE: Se completa mañana domingo al congelar código (EID-14)]` |
+| **SHA del Commit Entregado** | `80dd10dbef1a4636d771ee8d2f1d2f68e9de9f39` |
 | **Nombre del Archivo de Video** | `MAT1188_EID_G03_2026.mp4` |
-| **Duración Exacta del Video** | `[PENDIENTE: Se completa mañana domingo con el render final (EID-20)]` *(Rango exigido: 4:00 a 6:00 min)* |
+| **Duración Exacta del Video** | `5 minutos y 57 segundos` *(05:57 min · Rango exigido: 4:00 a 6:00 min)* |
 | **Nombre de la Ficha PDF** | `MAT1188_EID_G03_2026.pdf` |
 | **Código de Ética** | Entregado en Blackboard (`MAT1188_ETICA_G03_2026.pdf`) el 06 de octubre de 2026 |
 
-### Mapa de Localización Documental en el Repositorio (V8d, V8e)
+### Mapa de Documentos en el Repositorio (V8d, V8e)
 
-Para facilitar la revisión del equipo docente, todos los respaldos exigidos por la pauta se encuentran en rutas directas dentro del repositorio:
+Todos los respaldos del video y la defensa oral se encuentran organizados y accesibles en el repositorio:
 
-| Documento / Recurso | Ruta en el Repositorio | Propósito y Contenido |
+| Documento / Recurso | Ruta en el Repositorio | Contenido y Propósito |
 | :--- | :--- | :--- |
-| **Guion Técnico y Notas Matemáticas** | [`docs/guion.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/guion.md) | Guion completo sincronizado por escena, tiempos, locutores y desarrollo matemático hablado. |
-| **Marco Teórico** | [`docs/teoria.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/teoria.md) | Definición formal de partición, puntos muestra, suma de Riemann, refinamiento e integral definida. |
-| **Desarrollo Analítico del Ejemplo** | [`docs/ejemplo.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/ejemplo.md) | Cálculos paso a paso para $n=4, 8, 16, 32$, fórmula cerrada $S_n$ y comparación con el valor exacto. |
-| **Fuentes y Bibliografía** | [`docs/referencias.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/referencias.md) | Referencias bibliográficas completas (ISBN, secciones, páginas y enlaces verificables). |
-| **Declaración de Uso de IA** | [`docs/declaracion_ia.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/declaracion_ia.md) | Registro detallado por integrante de herramientas de IA, finalidades y verificación humana. |
-| **Configuración Centralizada** | [`scenes/config.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/scenes/config.py) | Parámetros únicos ($f$, $[a,b]$, $n$, punto medio) consumidos por todas las escenas. |
-| **Auditoría Matemática Exacta** | [`verify.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/verify.py) | Script independiente en aritmética racional (`fractions.Fraction`) que valida $S_n$ y la tabla. |
-| **Runner Multiplataforma y Pruebas** | [`render.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/render.py) / [`tests/test_config.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/tests/test_config.py) | Automatización de renderizado (480p/1080p) y suite de 9 pruebas unitarias con `unittest`. |
+| **Guion y Notas Matemáticas** | [`docs/guion.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/guion.md) | Guion completo del video con marcas de tiempo, locutores y desarrollo hablado. |
+| **Marco Teórico** | [`docs/teoria.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/teoria.md) | Conceptos de partición, puntos muestra, sumas de Riemann, refinamiento e integral. |
+| **Ejemplo Desarrollado** | [`docs/ejemplo.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/ejemplo.md) | Cálculos detallados para $n=4, 8, 16, 32$, deducción de la fórmula y tabla de valores. |
+| **Fuentes y Referencias** | [`docs/referencias.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/referencias.md) | Bibliografía completa con enlaces directos, páginas e ISBN consultados. |
+| **Declaración de Uso de IA** | [`docs/declaracion_ia.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/declaracion_ia.md) | Uso transparente de IA por cada integrante y métodos de verificación humana aplicados. |
+| **Parámetros Centralizados** | [`scenes/config.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/scenes/config.py) | Parámetros matemáticos compartidos por todas las animaciones ($f$, $[a,b]$, $n$, puntos medios). |
+| **Auditoría y Pruebas** | [`verify.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/verify.py) / [`tests/test_config.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/tests/test_config.py) | Verificación independiente en fracciones exactas y suite de 11 pruebas automáticas. |
+| **Runner Multiplataforma** | [`render.py`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/render.py) | Script de ejecución para renderizar escenas y correr pruebas en Linux, Windows y macOS. |
 
 ---
 
@@ -48,10 +48,10 @@ Para facilitar la revisión del equipo docente, todos los respaldos exigidos por
 
 | Integrante | Cuenta GitHub | Responsabilidad Principal | Aporte Efectivo al Proyecto |
 | :--- | :--- | :--- | :--- |
-| **Denys Sofía Rodríguez Noguera** *(Líder)* | [@sofiarodrigueznog](https://github.com/sofiarodrigueznog) | Revisión e integración del video | Coordinación general, arquitectura del repositorio, workflows de CI, edición/montaje del MP4 final, locución y entrega en Blackboard. |
-| **Paulo Villalobos Aravena** | [@notKechai](https://github.com/notKechai) | Matemática y explicación | Redacción del marco teórico (`teoria.md`), desarrollo analítico del ejemplo (`ejemplo.md`), deducción de la fórmula cerrada $S_n$, guion y locución. |
-| **Antonio Ignacio Lara Fuentealba** | [@alara2024uct](https://github.com/alara2024uct) | Visualización y código | Parametrización en `scenes/config.py`, pruebas unitarias (`test_config.py`), programación de Escena 1 ($n=4$) y Escena 2 (refinamiento), y locución. |
-| **Renato Misrrain Carrasco Oviedo** | [@RCarrascoO](https://github.com/RCarrascoO) | Apoyo matemática y visualización | Auditoría racional independiente (`verify.py`), runner multiplataforma (`render.py`), programación de Escena 3 (límite e integral), locución y ficha técnica. |
+| **Denys Sofía Rodríguez Noguera** *(Líder)* | [@sofiarodrigueznog](https://github.com/sofiarodrigueznog) | Revisión e integración del video | Coordinación general, estructura del repositorio, automatización CI, edición y montaje final del video MP4 (5:57 min), locución y entrega oficial. |
+| **Paulo Villalobos Aravena** | [@notKechai](https://github.com/notKechai) | Matemática y explicación | Redacción de la teoría (`teoria.md`), desarrollo analítico del ejemplo con puntos medios (`ejemplo.md`), deducción de la fórmula cerrada $S_n$, guion y locución. |
+| **Antonio Ignacio Lara Fuentealba** | [@alara2024uct](https://github.com/alara2024uct) | Visualización y código | Centralización de parámetros en `config.py`, suite de pruebas (`test_config.py`), programación de Escena 1 ($n=4$) y Escena 2 (refinamiento), y locución. |
+| **Renato Misrrain Carrasco Oviedo** | [@RCarrascoO](https://github.com/RCarrascoO) | Apoyo matemática y visualización | Script de auditoría independiente (`verify.py`), runner multiplataforma (`render.py`), programación de Escena 3 (límite e integral), locución y ficha técnica. |
 
 ---
 
@@ -66,45 +66,49 @@ Para facilitar la revisión del equipo docente, todos los respaldos exigidos por
 
 ## 4. Fundamentos Matemáticos y Desarrollo del Ejemplo (Criterios V1, V2, V3)
 
-### A. Definición Formal y Glosario de Símbolos (V1a, V1b)
-Dada una función $f:[a,b] \to \mathbb{R}$ definida en un intervalo cerrado y acotado $[a,b]$, una **partición regular** divide el intervalo en $n \in \mathbb{N}$ subintervalos de igual longitud $[x_{i-1}, x_i]$ mediante los nodos $x_i = a + i\Delta x$ para $i = 0, 1, \dots, n$. La **suma de Riemann** asociada se define formalmente como:
+### A. Definición de Suma de Riemann y Significado de los Símbolos (V1a, V1b)
+Para aproximar el área bajo una curva dividimos el intervalo $[a,b]$ en $n$ partes iguales. Cada parte tiene un ancho uniforme $\Delta x$ y sirve como base para construir un rectángulo. La **suma de Riemann** es simplemente la suma de las áreas de todos esos rectángulos:
 
 $$S_n = \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
 
-* **$[a,b]$:** Intervalo cerrado de integración (en nuestro ejemplo, $[0,2]$).
-* **$n$:** Número entero positivo de subintervalos (y de rectángulos de aproximación).
-* **$\Delta x = \frac{b-a}{n}$:** Ancho uniforme de cada subintervalo (base de cada rectángulo). Representa también la norma de la partición $\|P\|$.
-* **$x_i^* \in [x_{i-1}, x_i]$:** Punto muestra elegido dentro del $i$-ésimo subintervalo. En este proyecto utilizamos el **punto medio**:
-  $$x_i^* = \frac{x_{i-1} + x_i}{2} = a + \left(i - \frac{1}{2}\right)\Delta x$$
-* **$f(x_i^*)$:** Valor de la función en el punto muestra (altura del $i$-ésimo rectángulo).
-* **$A_i = f(x_i^*)\,\Delta x$:** Área geométrica del $i$-ésimo rectángulo.
-* **$\sum_{i=1}^n$:** Operador de suma finita que acumula las áreas de los $n$ rectángulos.
+* **$[a,b] = [0,2]$:** Intervalo cerrado donde analizamos la función.
+* **$n$:** Cantidad de partes (subintervalos) y número total de rectángulos que construimos.
+* **$\Delta x = \frac{b-a}{n} = \frac{2}{n}$:** Ancho de la base de cada rectángulo. Al aumentar $n$, las bases se vuelven cada vez más delgadas.
+* **$x_i^*$:** Punto muestra elegido dentro de cada subintervalo para medir la altura. En este proyecto elegimos el **punto medio** de cada tramo:
+  $$x_i^* = a + \left(i - \frac{1}{2}\right)\Delta x$$
+* **$f(x_i^*)$:** Altura del rectángulo $i$, calculada evaluando la función en su punto medio.
+* **$A_i = f(x_i^*)\,\Delta x$:** Área individual del rectángulo $i$ (base por altura).
+* **$\sum_{i=1}^n$:** Sumatoria que reúne las áreas de los $n$ rectángulos para obtener la aproximación total $S_n$.
 
-### B. Condiciones Necesarias y Distinción Conceptual (V1c, V1d)
-1. **Condición de integrabilidad (Continuidad):** La función $f(x) = x^2 + 1$ es polinómica y, por tanto, **continua** en todo el intervalo cerrado $[0,2]$. La continuidad en un compacto garantiza que $f$ es integrable en el sentido de Riemann, es decir, que el límite $\lim_{n\to\infty} S_n$ existe, es finito y es único con independencia del criterio de punto muestra elegido.
-2. **Condición de positividad (Área geométrica vs. Área neta signada):** En general, una suma de Riemann y la integral definida representan un **área neta con signo** (las regiones bajo el eje $x$ aportan signo negativo). Sin embargo, como $f(x) = x^2 + 1 \geq 1 > 0$ para todo $x \in [0,2]$, cada altura $f(x_i^*) > 0$ y la suma de Riemann coincide exactamente con una aproximación del **área geométrica** bajo la curva.
-3. **Distinción conceptual:**
-   * **Suma de Riemann ($S_n$):** Aproximación discreta y finita calculada para un número fijo de rectángulos $n$.
-   * **Proceso de refinamiento y límite ($\lim_{n\to\infty} S_n$):** Proceso dinámico en el que $n$ crece indefinidamente provocando que $\Delta x = \frac{b-a}{n} \to 0$.
-   * **Integral definida ($\int_a^b f(x)\,dx$):** Número real exacto definido como el valor al cual converge dicho límite:
-     $$\int_a^b f(x)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
+### B. Condiciones Necesarias y Conceptos Clave (V1c, V1d)
+1. **Continuidad:** La función $f(x) = x^2 + 1$ es continua en todo el intervalo $[0,2]$ (no tiene saltos ni divisiones por cero). Esta condición asegura que el proceso de aproximación funcione de manera estable y que las sumas de Riemann converjan a un único valor exacto cuando $n$ crece.
+2. **Positividad (Área geométrica):** En general, una suma de Riemann calcula el *área neta con signo* (las partes bajo el eje $x$ restan). En nuestro ejemplo, como $f(x) \geq 1 > 0$ en todo $[0,2]$, la curva está siempre por encima del eje horizontal. Por lo tanto, los rectángulos tienen alturas positivas y la suma representa directamente el **área geométrica** de la región.
+3. **Distinción entre aproximación, límite e integral:**
+   * **Suma de Riemann ($S_n$):** Es un cálculo aproximado que suma un número finito de rectángulos (por ejemplo, con 4 o 32 rectángulos).
+   * **Refinamiento y límite ($n \to \infty$):** Es la idea matemática de hacer las bases cada vez más finas ($\Delta x \to 0$) aumentando indefinidamente la cantidad de rectángulos.
+   * **Integral definida ($\int_0^2 f(x)\,dx$):** Es el número exacto al que se acercan las aproximaciones cuando $n$ tiende a infinito:
+     $$\int_0^2 (x^2+1)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x = \frac{14}{3}$$
 
-### C. Desarrollo Analítico del Ejemplo y Deducción de la Fórmula Cerrada (V2a–d)
-Para $f(x) = x^2 + 1$ en $[0,2]$, el **valor exacto** mediante el Teorema Fundamental del Cálculo es:
+### C. Cálculos del Ejemplo y Deducción de la Fórmula (V2a–d)
+El **valor analítico exacto** del área se obtiene mediante la regla de Barrow (evaluando la primitiva):
 $$\int_0^2 (x^2 + 1)\,dx = \left[ \frac{x^3}{3} + x \right]_0^2 = \frac{2^3}{3} + 2 = \frac{8}{3} + 2 = \frac{14}{3} \approx 4.666667$$
 
-Con partición regular en $[0,2]$, tenemos $\Delta x = \frac{2}{n}$ y puntos medios $x_i^* = \left(i - \frac{1}{2}\right)\frac{2}{n} = \frac{2i-1}{n}$.
-* **Cálculo explícito para $n=4$:** $\Delta x = \frac{1}{2}$ y puntos medios $x_1^* = \frac{1}{4}, x_2^* = \frac{3}{4}, x_3^* = \frac{5}{4}, x_4^* = \frac{7}{4}$.
-  $$S_4 = \frac{1}{2}\left[\left(\frac{1}{16}+1\right) + \left(\frac{9}{16}+1\right) + \left(\frac{25}{16}+1\right) + \left(\frac{49}{16}+1\right)\right] = \frac{1}{2}\left[\frac{84}{16} + 4\right] = \frac{1}{2}\left[\frac{37}{4}\right] = \frac{37}{8} = 4.625$$
-* **Deducción algebraica de la fórmula cerrada para cualquier $n$:**
-  Sustituyendo $x_i^* = \frac{2i-1}{n}$ y $\Delta x = \frac{2}{n}$ en la definición de $S_n$:
-  $$S_n = \sum_{i=1}^{n} \left[\left(\frac{2i-1}{n}\right)^2 + 1\right]\frac{2}{n} = \frac{2}{n}\left[\frac{1}{n^2}\sum_{i=1}^{n}(4i^2 - 4i + 1) + \sum_{i=1}^{n} 1\right]$$
-  Aplicando las identidades de sumas de potencias $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$, $\sum_{i=1}^n i = \frac{n(n+1)}{2}$ y $\sum_{i=1}^n 1 = n$, se obtiene la identidad de cuadrados de impares $\sum_{i=1}^n (2i-1)^2 = \frac{n(4n^2-1)}{3}$. Al reemplazar:
-  $$S_n = \frac{2}{n}\left[\frac{1}{n^2}\cdot\frac{n(4n^2-1)}{3} + n\right] = \frac{2(4n^2-1)}{3n^2} + 2 = \frac{8n^2 - 2 + 6n^2}{3n^2} = \frac{14n^2 - 2}{3n^2} = \frac{14}{3} - \frac{2}{3n^2}$$
+* **Cálculo paso a paso con 4 rectángulos ($n=4$):**
+  El ancho de cada rectángulo es $\Delta x = \frac{2-0}{4} = \frac{1}{2} = 0.5$.  
+  Los puntos medios de los 4 tramos son: $x_1^* = 0.25$, $x_2^* = 0.75$, $x_3^* = 1.25$ y $x_4^* = 1.75$ (o en fracciones: $\frac{1}{4}, \frac{3}{4}, \frac{5}{4}, \frac{7}{4}$).  
+  Evaluamos la altura de cada uno y sumamos sus áreas:
+  $$S_4 = \frac{1}{2}\left[\left(\left(\frac{1}{4}\right)^2+1\right) + \left(\left(\frac{3}{4}\right)^2+1\right) + \left(\left(\frac{5}{4}\right)^2+1\right) + \left(\left(\frac{7}{4}\right)^2+1\right)\right] = \frac{37}{8} = 4.625$$
 
-### D. Tabla Comparativa de Refinamiento y Convergencia (V2d, V3a)
+* **Cómo se obtiene la fórmula general para cualquier $n$:**  
+  Con $\Delta x = \frac{2}{n}$ y puntos medios $x_i^* = \frac{2i-1}{n}$, la suma completa queda:
+  $$S_n = \sum_{i=1}^{n} \left[\left(\frac{2i-1}{n}\right)^2 + 1\right]\frac{2}{n} = \frac{2}{n}\left[\frac{1}{n^2}\sum_{i=1}^{n}(4i^2 - 4i + 1) + n\right]$$
+  Al sumar los cuadrados de los números impares se obtiene la identidad conocida $\sum_{i=1}^n (2i-1)^2 = \frac{n(4n^2-1)}{3}$. Reemplazando esa suma y simplificando el álgebra:
+  $$S_n = \frac{2(4n^2-1)}{3n^2} + 2 = \frac{8n^2 - 2 + 6n^2}{3n^2} = \frac{14n^2 - 2}{3n^2} = \frac{14}{3} - \frac{2}{3n^2}$$
+  Esta fórmula permite conocer el valor exacto de la suma de Riemann para cualquier $n$ sin tener que sumar rectángulo por rectángulo.
 
-| $n$ | Ancho $\Delta x$ | Suma $S_n$ exacta | Suma $S_n$ decimal | Error absoluto $\left|\frac{14}{3} - S_n\right|$ | Error decimal |
+### D. Tabla de Resultados y Comportamiento del Error (V2d, V3a)
+
+| Cantidad de rectángulos $n$ | Ancho de base $\Delta x$ | Suma de Riemann $S_n$ | Valor decimal | Error exacto $\left|\frac{14}{3} - S_n\right|$ | Error decimal |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | **4** | $1/2 = 0.5000$ | $37/8$ | $4.625000$ | $1/24$ | $0.041667$ |
 | **8** | $1/4 = 0.2500$ | $149/32$ | $4.656250$ | $1/96$ | $0.010417$ |
@@ -112,57 +116,57 @@ Con partición regular en $[0,2]$, tenemos $\Delta x = \frac{2}{n}$ y puntos med
 | **32** | $1/16 = 0.0625$ | $2389/512$ | $4.666016$ | $1/1536$ | $0.000651$ |
 | **$n \to \infty$** | $\Delta x \to 0$ | **$\mathbf{14/3}$** | **$4.666667$** | **$0$** | **$0.000000$** |
 
-* **Por qué $S_n$ subestima ligeramente a $\frac{14}{3}$:** Como $f(x) = x^2+1$ tiene segunda derivada positiva ($f''(x) = 2 > 0$, función estrictamente convexa en $[0,2]$), la recta tangente en el punto medio de cada subintervalo queda por debajo de la curva. Por ello, el exceso de área a un lado del punto medio es ligeramente menor que el defecto al otro lado, produciendo el término negativo $-\frac{2}{3n^2}$.
-* **Convergencia cuadrática $O(1/n^2)$:** Al usar puntos medios, el error es proporcional a $\frac{1}{n^2}$. Cada vez que duplicamos $n$ ($4 \to 8 \to 16 \to 32$), el error se divide exactamente por $4$ ($\frac{1}{24} \to \frac{1}{96} \to \frac{1}{384} \to \frac{1}{1536}$), convergiendo mucho más rápido que las sumas por extremo izquierdo o derecho ($O(1/n)$).
+* **Por qué las aproximaciones quedan por debajo de $\frac{14}{3}$:**  
+  La curva de $f(x)=x^2+1$ se dobla hacia arriba en todo el intervalo (su segunda derivada es positiva, $f''(x)=2>0$). Cuando se usa el punto medio en una curva con esta forma, la parte del rectángulo que queda por fuera de la curva es un poco más pequeña que el espacio que le falta por cubrir. Por esa razón geométrica, la suma siempre subestima levemente el área real ($S_n < \frac{14}{3}$).
+* **Rapidez de aproximación:**  
+  En nuestra fórmula el error es exactamente $\frac{2}{3n^2}$. Esto significa que cada vez que duplicamos la cantidad de rectángulos ($4 \to 8 \to 16 \to 32$), el error se divide por cuatro ($\frac{1}{24} \to \frac{1}{96} \to \frac{1}{384} \to \frac{1}{1536}$), haciendo que la aproximación mejore con gran rapidez.
 
-### E. Respuesta Fundamentada a la Pregunta Central (V3c, V3d, V3e)
-> Una suma de Riemann aproxima cada vez mejor la región porque, al mantener fijo el intervalo $[a,b]$ y aumentar el número de rectángulos $n$, el ancho de cada subintervalo $\Delta x = \frac{b-a}{n}$ disminuye hacia cero. En subintervalos cada vez más angostos, una función continua varía muy poco dentro de cada tramo, por lo que la altura constante $f(x_i^*)$ evaluada en el punto muestra representa con mayor fidelidad el comportamiento real de la curva, reduciendo los triángulos curvilíneos de error (espacio sobrante y faltante). Analíticamente, esto se comprueba en nuestra expresión cerrada $S_n = \frac{14}{3} - \frac{2}{3n^2}$: cuando $n \to \infty$, el término de discrepancia $\frac{2}{3n^2} \to 0$, haciendo que las sumas discretas converjan al valor exacto de la integral definida $\int_0^2 (x^2+1)\,dx = \frac{14}{3}$.
+### E. Respuesta a la Pregunta Central (V3c, V3d, V3e)
+> Una suma de Riemann aproxima cada vez mejor la región porque, al mantener fijo el intervalo $[0,2]$ y aumentar la cantidad de rectángulos, el ancho de cada base $\Delta x = \frac{2}{n}$ se vuelve cada vez más pequeño. En tramos tan estrechos, una curva suave cambia muy poco de altura, por lo que el techo plano del rectángulo se ajusta mucho mejor a la forma real de la función, reduciendo al mínimo los espacios vacíos y los sobrantes. Matemáticamente, esto queda demostrado en nuestra fórmula $S_n = \frac{14}{3} - \frac{2}{3n^2}$: a medida que $n$ se hace grande, la diferencia $\frac{2}{3n^2}$ tiende directamente a cero, haciendo que la suma de rectángulos coincida de forma exacta con la integral definida $\int_0^2 (x^2+1)\,dx = \frac{14}{3}$.
 
 ---
 
-## 5. Estructura del Video, Escenas de Manim y Participación Oral (Criterios V4, V5, V6)
+## 5. Escenas de Manim y Participación en el Video (Criterios V4, V5, V6)
 
-Todas las escenas fueron programadas en **Manim Community v0.22.0** (Python 3.12) e importan sus parámetros desde `scenes/config.py`, garantizando coherencia matemática y visual absoluta. Cada integrante interviene con su propia voz explicando contenido matemático sustantivo y es identificado en pantalla:
+Las escenas fueron desarrolladas en **Manim Community v0.22.0** (Python 3.12). Todos los gráficos y tablas toman sus valores de `scenes/config.py`. En el video, de **5:57 minutos** de duración, los cuatro integrantes participan explicando contenido matemático con su propia voz y son identificados por su nombre en pantalla:
 
-| Bloque / Archivo de Escena | Tiempos Base | Integrante (Voz en Off) | Contenido Matemático y Visualización Sincronizada |
+| Escena / Archivo | Tramo en Video | Integrante (Voz) | Contenido Explicado y Animación |
 | :--- | :---: | :--- | :--- |
-| **Presentación** *(Lámina inicial)* | Intro | **Sofía Rodríguez** | Identificación del curso, Grupo 3, nómina de integrantes, eje temático y título del proyecto. |
-| **Escena 1: Construcción ($n=4$)**<br>`scenes/escena1_construccion.py`<br>Clase: `Escena1Construccion` | 0:00 – 0:09<br>0:09 – 0:22<br>0:22 – 0:29.5 | **Paulo Villalobos**<br>**Sofía Rodríguez**<br>**Renato Carrasco** | • **Paulo:** Planteamiento del área bajo $f(x)=x^2+1 \geq 0$ en $[0,2]$ y formulación de la Pregunta Central.<br>• **Sofía:** Partición regular en $n=4$, cálculo de $\Delta x = \frac{2-0}{4} = 0.5$ y criterio de punto medio $x_i^* = \frac{x_{i-1}+x_i}{2}$.<br>• **Renato:** Construcción animada de los 4 rectángulos, cálculo explícito de $A_1 = f(0.25)\cdot 0.5 = 0.53125$ y suma total $S_4 = \frac{37}{8} = 4.625$. |
-| **Escena 2: Refinamiento**<br>`scenes/escena2_refinamiento.py`<br>Clase: `Escena2Refinamiento` | 0:00 – 0:17<br>0:17 – 0:35.2 | **Renato Carrasco**<br>**Sofía Rodríguez** | • **Renato:** Transición dinámica manteniendo fijos $f(x)$ y $[0,2]$ para $n=4 \to 8$, reducción de $\Delta x$ ($0.5 \to 0.25$) y mejora a $S_8 = 4.656250$.<br>• **Sofía:** Refinamiento a $n=16$ y $n=32$ ($S_{32} = 4.666016$), llenado de la tabla comparativa, cálculo de $\int_0^2(x^2+1)dx = \frac{14}{3}$ y caída del error de $0.041667$ a $0.000651$. |
-| **Escena 3: Límite e Integral**<br>`scenes/escena3_integral.py`<br>Clase: `Escena3Integral` | 0:00 – 0:18<br>0:18 – 0:23<br>0:23 – 0:27.4 | **Antonio Lara**<br>**Paulo Villalobos**<br>**Todos (Cierre)** | • **Antonio:** Interpretación del proceso $n \to \infty \implies \Delta x \to 0$ y paso formal $\lim_{n\to\infty}\sum f(x_i^*)\Delta x = \int_a^b f(x)dx$, distinguiendo la visualización finita ($n=32$) del concepto de límite.<br>• **Paulo:** Análisis algebraico del error $\frac{2}{3n^2} \to 0$ a partir de $S_n = \frac{14}{3} - \frac{2}{3n^2}$.<br>• **Paulo, Sofía, Renato y Antonio:** Respuesta síntesis a la Pregunta Central y créditos bibliográficos. |
+| **Presentación** | Inicio | **Sofía Rodríguez** | Título del proyecto, tema del eje de aproximación, grupo e integrantes. |
+| **Escena 1: Construcción ($n=4$)**<br>`escena1_construccion.py` | 0:00 – 0:09<br>0:09 – 0:22<br>0:22 – 0:29.5 | **Paulo Villalobos**<br>**Sofía Rodríguez**<br>**Renato Carrasco** | • **Paulo:** Presentación de la curva $f(x)=x^2+1$ en $[0,2]$ y planteamiento de la pregunta central.<br>• **Sofía:** División en $n=4$ partes, cálculo de $\Delta x = 0.5$ y ubicación de los puntos medios.<br>• **Renato:** Construcción de los 4 rectángulos uno a uno, cálculo del primer rectángulo ($A_1 = 0.53125$) y suma total $S_4 = 4.625$. |
+| **Escena 2: Refinamiento**<br>`escena2_refinamiento.py` | 0:00 – 0:17<br>0:17 – 0:35.2 | **Renato Carrasco**<br>**Sofía Rodríguez** | • **Renato:** Paso de $n=4$ a $n=8$, reducción del ancho $\Delta x$ de $0.5$ a $0.25$ y cambio en la suma ($S_8 = 4.656250$).<br>• **Sofía:** Aumento a $n=16$ y $n=32$ ($S_{32} = 4.666016$), llenado de la tabla comparativa, cálculo de la integral $\frac{14}{3}$ y reducción del error. |
+| **Escena 3: Límite e Integral**<br>`escena3_integral.py` | 0:00 – 0:18<br>0:18 – 0:23<br>0:23 – 0:27.4 | **Antonio Lara**<br>**Paulo Villalobos**<br>**Todos (Cierre)** | • **Antonio:** Explicación del paso al límite ($n\to\infty \implies \Delta x\to 0$), conexión formal entre la suma y la integral $\int_a^b f(x)dx$, y distinción entre ver 32 rectángulos y el concepto de límite.<br>• **Paulo:** Explicación de la fórmula del error $\frac{2}{3n^2} \to 0$.<br>• **Todos:** Respuesta compartida a la pregunta central y créditos bibliográficos. |
 
 ---
 
-## 6. Arquitectura del Código y Respuesta ante Variaciones (Criterios D4 y D5)
+## 6. Parámetros del Código y Respuestas ante Variaciones (Criterios D4 y D5)
 
-Para respaldar la trazabilidad técnica del proyecto, todos los cálculos y gráficos dependen de `scenes/config.py`:
-* **Parámetros centrales:** `f(x)` define $x^2+1$; `a = 0.0` y `b = 2.0` fijan el intervalo; `n_values = [4, 8, 16, 32]` controla las iteraciones; `sample_type = "center"` define el punto medio mediante un diccionario de desplazamientos (`"left": 0.0`, `"center": 0.5`, `"right": 1.0`).
-* **Comportamiento ante variaciones (Criterio D5):**
-  1. *Cambio a extremos izquierdos o derechos (`sample_type = "left"` o `"right"`):* Como $f(x)=x^2+1$ es estrictamente creciente en $[0,2]$, con extremos izquierdos todos los rectángulos quedan inscrito bajo la curva (subestimación, $S_n < \frac{14}{3}$), mientras que con extremos derechos sobresalen por encima (sobreestimación, $S_n > \frac{14}{3}$). En ambos casos el orden de convergencia pasa de $O(1/n^2)$ a $O(1/n)$, pero el límite cuando $n \to \infty$ sigue siendo $\frac{14}{3}$.
-  2. *Cambio del intervalo (p. ej. $[0,4]$ modificando `b = 4.0`):* Para un mismo $n$, el ancho $\Delta x = \frac{4}{n}$ se duplica, los rectángulos son más anchos y el error para un $n$ fijo aumenta, requiriendo un $n$ mayor para alcanzar la misma precisión.
-  3. *Cambio de la función (p. ej. $f(x) = 2x + 1$ lineal):* Con punto medio (`"center"`), el triángulo que sobra a la derecha del punto medio es congruente con el triángulo que falta a la izquierda, por lo que $S_n$ da el área exacta desde $n=1$ (error cero).
-
----
-
-## 7. Fuentes y Referencias Consultadas (Criterio V7a, V7b, V7c)
-
-*(Detalle completo disponible en el repositorio en [`docs/referencias.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/referencias.md))*
-
-1. **Apunte Base de la Asignatura:** Higueras Cheuquepan, N. (2026). *Introducción a la integral*. MAT1188 Cálculo Intermedio, Universidad Católica de Temuco. Base conceptual común del proyecto.
-2. **Fuente Matemática Complementaria 1:** Stewart, J. (2012). *Cálculo de una variable. Trascendentes tempranas* (7.ª ed.; M. C. Rodríguez Pedroza, trad.). Cengage Learning. ISBN 978-607-481-881-9. Secciones 5.1 ("Áreas y distancias", p. 360) y 5.2 ("La integral definida", p. 371).
-3. **Fuente Matemática Complementaria 2:** Strang, G., Herman, E. et al. (2022). *Cálculo*, vol. 1, §5.1 ("Aproximación de áreas"). OpenStax. Disponible en: [https://openstax.org/books/cálculo-volumen-1/pages/5-1-aproximacion-de-areas](https://openstax.org/books/c%C3%A1lculo-volumen-1/pages/5-1-aproximacion-de-areas).
-4. **Recurso Audiovisual Complementario:** Sanderson, G. [3Blue1Brown]. (2017, 5 de mayo). *Integration and the fundamental theorem of calculus | Chapter 8, Essence of calculus* [Video]. YouTube (min. 8:20–11:18). Disponible en: [https://www.youtube.com/watch?v=rfG8ce4nNh0](https://www.youtube.com/watch?v=rfG8ce4nNh0).
-5. **Documentación Oficial de Software:** The Manim Community Developers (2026). *CoordinateSystem* (v0.22.0) – Método `get_riemann_rectangles`. Manim Community Documentation. Disponible en: [https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html](https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html).
+El archivo `scenes/config.py` centraliza la función `f(x) = x**2 + 1`, el intervalo `a = 0.0`, `b = 2.0`, la lista `n_values = [4, 8, 16, 32]` y el tipo de muestreo `sample_type = "center"` (con soporte para `"left"`, `"center"` y `"right"`):
+* **¿Qué pasa si usamos extremos izquierdos o derechos en vez de puntos medios?**  
+  Como la función $f(x)=x^2+1$ es creciente en $[0,2]$, si usamos extremos izquierdos todos los rectángulos quedan completamente por debajo de la curva (subestimación). Si usamos extremos derechos, sobresalen por arriba (sobreestimación). En ambos casos la convergencia es más lenta (lineal $1/n$), pero al tomar el límite cuando $n \to \infty$ ambos métodos llegan al mismo valor exacto: $\frac{14}{3}$. En el código solo bastaría cambiar `sample_type = "left"` o `"right"`.
+* **¿Qué pasa si cambiamos el intervalo a $[0,4]$?**  
+  Para un mismo número de rectángulos, el ancho $\Delta x = \frac{4-0}{n}$ se duplicaría. Los rectángulos serían el doble de anchos, por lo que el error inicial sería mayor y se necesitarían más subdivisiones para lograr la misma cercanía. En el código simplemente se modifica `b = 4.0`.
 
 ---
 
-## 8. Declaración de Uso de Inteligencia Artificial y Verificación Humana (Criterio V7d, V7e)
+## 7. Fuentes y Referencias Consultadas (Criterios V7a, V7b, V7c)
 
-*(Declaración exhaustiva disponible en el repositorio en [`docs/declaracion_ia.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/declaracion_ia.md))*
+*(Detalle completo en [`docs/referencias.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/referencias.md))*
 
-El equipo declara de forma transparente el uso de herramientas de Inteligencia Artificial generativa como apoyo técnico y metodológico, bajo estricta validación humana:
+1. **Apunte de la Asignatura:** Higueras Cheuquepan, N. (2026). *Introducción a la integral*. MAT1188 Cálculo Intermedio, Universidad Católica de Temuco.
+2. **Libro Complementario 1:** Stewart, J. (2012). *Cálculo de una variable. Trascendentes tempranas* (7.ª ed.). Cengage Learning. ISBN 978-607-481-881-9. Secciones 5.1 ("Áreas y distancias", p. 360) y 5.2 ("La integral definida", p. 371).
+3. **Libro Complementario 2:** Strang, G. y Herman, E. (2022). *Cálculo*, vol. 1, §5.1 ("Aproximación de áreas"). OpenStax. Disponible en: [https://openstax.org/books/cálculo-volumen-1/pages/5-1-aproximacion-de-areas](https://openstax.org/books/c%C3%A1lculo-volumen-1/pages/5-1-aproximacion-de-areas).
+4. **Referencia Visual:** Sanderson, G. [3Blue1Brown]. (2017). *Integration and the fundamental theorem of calculus* [Video]. YouTube (min. 8:20–11:18). Disponible en: [https://www.youtube.com/watch?v=rfG8ce4nNh0](https://www.youtube.com/watch?v=rfG8ce4nNh0).
+5. **Documentación de Software:** The Manim Community Developers (2026). *CoordinateSystem* (v0.22.0) – Método `get_riemann_rectangles`. Disponible en: [https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html](https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html).
 
-* **Denys Sofía Rodríguez Noguera:** Utilizó **Claude** (Anthropic) para estructurar la arquitectura del repositorio, configurar el workflow de validación de ramas en GitHub Actions (`.github/workflows/nombre-de-rama.yml`) y diseñar las pruebas de automatización con Jira. *Verificación:* Ejecución manual de pruebas en PRs y revisión humana antes de cada merge a `main`.
-* **Paulo Villalobos Aravena:** Utilizó **GitHub Copilot** para asistencia en comandos de Git/GitHub y **ChatGPT** (OpenAI) para revisión crítica de claridad pedagógica y calibración de tecnicismo en `docs/teoria.md` y `docs/ejemplo.md`. *Verificación:* Deducción analítica hecha a mano de todas las sumatorias, de la fórmula cerrada $S_n = \frac{14}{3} - \frac{2}{3n^2}$ y contraste con *Stewart* y *OpenStax*.
-* **Antonio Ignacio Lara Fuentealba:** Utilizó **ChatGPT** (OpenAI) para consultar la sintaxis de parametrización en Manim Community (`scenes/config.py`), funciones de las escenas 1 y 2, y estructura de pruebas unitarias (`tests/test_config.py`). *Verificación:* Renderizado local e inspección visual cuadro a cuadro de ejes, escalas y etiquetas, además de ejecución de la suite `unittest`.
-* **Renato Misrrain Carrasco Oviedo:** Utilizó **Antigravity / Gemini** (Google DeepMind) como apoyo en el diseño del script de auditoría racional (`verify.py`), el runner multiplataforma (`render.py`), la programación de la Escena 3 y el pulido de fluidez del guion. *Verificación:* Comprobación cruzada con aritmética exacta (`fractions.Fraction`), compilación de las escenas en 480p y 1080p en Linux y validación de concordancia 1:1 entre código, tabla y teoría.
+---
+
+## 8. Declaración de Uso de Inteligencia Artificial (Criterios V7d, V7e)
+
+*(Detalle completo en [`docs/declaracion_ia.md`](https://github.com/sofiarodrigueznog/EID-Grupo-3/blob/main/docs/declaracion_ia.md))*
+
+El equipo utilizó herramientas de Inteligencia Artificial como asistentes técnicos con supervisión y validación humana directa:
+* **Denys Sofía Rodríguez Noguera:** Claude (Anthropic) para organizar carpetas del repositorio, configurar la validación de ramas en GitHub Actions y coordinar tareas en Jira. *Verificación:* Pruebas manuales de ejecución y revisión de PRs antes de incorporar a `main`.
+* **Paulo Villalobos Aravena:** GitHub Copilot para apoyo con comandos de Git y ChatGPT (OpenAI) para revisar redacción en `teoria.md` y `ejemplo.md`. *Verificación:* Deducción de cálculos hecha a mano y contrastada con los libros de texto.
+* **Antonio Ignacio Lara Fuentealba:** ChatGPT (OpenAI) para dudas sobre sintaxis de Manim Community (`config.py` y escenas 1 y 2) y diseño de tests unitarios. *Verificación:* Inspección visual de animaciones cuadro a cuadro y ejecución de `unittest`.
+* **Renato Misrrain Carrasco Oviedo:** Antigravity / Gemini (Google DeepMind) para estructurar el script de auditoría (`verify.py`), el runner `render.py`, la Escena 3 y apoyar la locución. *Verificación:* Comprobación con aritmética de fracciones exactas y renderizado local de todas las escenas.
