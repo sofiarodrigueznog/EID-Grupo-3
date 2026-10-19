@@ -5,6 +5,7 @@
 % ============================================================================
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[top=1.8cm, bottom=2.0cm, left=2.0cm, right=2.0cm, headheight=14pt]{geometry}
 
 \usepackage{amsmath, amssymb, amsfonts}
@@ -21,8 +22,8 @@
 % ============================================================================
 % DATOS OFICIALES DE ENTREGA
 % ============================================================================
-\newcommand{\CommitSHA}{\texttt{80dd10dbef1a4636d771ee8d2f1d2f68e9de9f39}}
-\newcommand{\DuracionVideo}{\textbf{5:57 min} (5 minutos y 57 segundos $\cdot$ Rango exigido: 4:00 a 6:00 min)}
+\newcommand{\CommitSHA}{Commit con la etiqueta \texttt{v1.2-entrega} (SHA completo en la ficha entregada en Blackboard)}
+\newcommand{\DuracionVideo}{\textbf{5:55 min} (5 minutos y 55 segundos $\cdot$ Rango exigido: 4:00 a 6:00 min, incluye presentación y créditos)}
 
 % ============================================================================
 % ESTILO Y FORMATO EDITORIAL
@@ -131,7 +132,7 @@ Todos los respaldos del video y la defensa oral se localizan directamente en el 
 \toprule
 \textbf{Integrante} & \textbf{Cuenta GitHub} & \textbf{Rol Principal} & \textbf{Aporte Efectivo al Proyecto} \\
 \midrule
-\textbf{Denys Sofía Rodríguez Noguera} \textit{(Líder)} & \href{https://github.com/sofiarodrigueznog}{\texttt{@sofiarodrigueznog}} & Revisión e integración del video & Coordinación general, arquitectura del repositorio, CI, montaje final del MP4 (5:57 min), locución y entrega oficial. \\
+\textbf{Denys Sofía Rodríguez Noguera} \textit{(Líder)} & \href{https://github.com/sofiarodrigueznog}{\texttt{@sofiarodrigueznog}} & Revisión e integración del video & Coordinación general, arquitectura del repositorio, CI, montaje final del MP4 (5:55 min), locución y entrega oficial. \\
 \textbf{Paulo Villalobos Aravena} & \href{https://github.com/notKechai}{\texttt{@notKechai}} & Matemática y explicación & Redacción de \texttt{teoria.md} y \texttt{ejemplo.md}, deducción de la fórmula cerrada $S_n$, guion y locución. \\
 \textbf{Antonio Ignacio Lara Fuentealba} & \href{https://github.com/alara2024uct}{\texttt{@alara2024uct}} & Visualización y código & Parametrización en \texttt{scenes/config.py}, suite de tests (\texttt{test\_config.py}), programación de Escenas 1 y 2, y locución. \\
 \textbf{Renato Misrrain Carrasco Oviedo} & \href{https://github.com/RCarrascoO}{\texttt{@RCarrascoO}} & Apoyo matemática y visualización & Script de auditoría (\texttt{verify.py}), runner multiplataforma (\texttt{render.py}), programación de Escena 3, locución y ficha técnica. \\
@@ -165,7 +166,7 @@ S_n = \sum_{i=1}^{n} f(x_i^*)\,\Delta x
     \textbf{(iii)} la integral definida $\int_0^2 (x^2+1)\,dx = \lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)\,\Delta x = \frac{14}{3}$ es el valor exacto límite.
 \end{enumerate}
 
-\subsection{Cálculos del Ejemplo y Deducción de la Fórmula (V2a--d)}
+\subsection{Cálculos del Ejemplo y Deducción de la Fórmula (V2b--e)}
 \begin{itemize}[leftmargin=1.5em, itemsep=3pt, topsep=2pt]
     \item \textbf{Valor exacto evaluando la primitiva:}
     \[
@@ -222,19 +223,21 @@ Una suma de Riemann aproxima cada vez mejor la región porque, al mantener fijo 
 % ============================================================================
 \section{Escenas de Manim y Participación en el Video (Criterios V4, V5, V6)}
 
-El proyecto fue programado en \textbf{Manim Community v0.22.0} (Python 3.12). Todas las animaciones toman sus parámetros desde \texttt{scenes/config.py}. En el video, con una duración de \textbf{5:57 minutos}, los cuatro integrantes participan explicando contenido matemático con su propia voz y son identificados por su nombre en pantalla:
+El proyecto fue programado en \textbf{Manim Community v0.22.0} (Python 3.12). Todas las animaciones toman sus parámetros desde \texttt{scenes/config.py}. En el video, con una duración de \textbf{5:55 minutos}, los cuatro integrantes participan explicando contenido matemático con su propia voz y son identificados por su nombre en pantalla:
 
 \begin{tabularx}{\textwidth}{@{} p{4.5cm} p{2.1cm} p{2.7cm} Y @{}}
 \toprule
 \textbf{Escena / Archivo} & \textbf{Tramo en Video} & \textbf{Locutor(a)} & \textbf{Contenido Explicado y Animación} \\
 \midrule
-\textbf{Presentación} & Inicio & Sofía Rodríguez & Título del proyecto, tema del eje de aproximación, grupo e integrantes. \\
+\textbf{Presentación} & 0:00 -- 0:17 & Denys Sofía Rodríguez & Título del proyecto, curso, grupo, integrantes, tema y pregunta central (en pantalla). \\
 \midrule
-\textbf{Escena 1: Construcción}\newline{\small\texttt{escena1\_construccion.py}} & 0:00 -- 0:09\newline 0:09 -- 0:22\newline 0:22 -- 0:29.5 & Paulo Villalobos\newline Sofía Rodríguez\newline Renato Carrasco & \textbf{Paulo:} Presentación de la curva $f(x)=x^2+1$ en $[0,2]$ y pregunta central.\newline \textbf{Sofía:} División en $n=4$ partes, cálculo de $\Delta x = 0.5$ y puntos medios.\newline \textbf{Renato:} Construcción de los 4 rectángulos uno a uno, cálculo de $A_1 = 0.53125$ y suma total $S_4 = 4.625$. \\
+\textbf{Escena 1: Construcción}\newline{\small\texttt{escena1\_construccion.py}} & 0:17 -- 0:47\newline 0:47 -- 1:41\newline 1:41 -- 2:35 & Paulo Villalobos\newline Denys Sofía Rodríguez\newline Renato Carrasco & \textbf{Paulo:} función $f(x)=x^2+1$ en $[0,2]$, condiciones ($f$ continua y positiva) y pregunta central.\newline \textbf{Sofía:} partición regular en $n=4$, cálculo de $\Delta x = 0.5$, punto muestra (punto medio) y área $f(x_i^*)\,\Delta x$.\newline \textbf{Renato:} $S_4 = \frac{37}{8} = 4.625$, cálculo paso a paso de $A_1 = 0.53125$ y significado de $S_n=\sum f(x_i^*)\,\Delta x$. \\
 \midrule
-\textbf{Escena 2: Refinamiento}\newline{\small\texttt{escena2\_refinamiento.py}} & 0:00 -- 0:17\newline 0:17 -- 0:35.2 & Renato Carrasco\newline Sofía Rodríguez & \textbf{Renato:} Paso de $n=4$ a $n=8$, reducción del ancho $\Delta x$ a $0.25$ y cambio en la suma ($S_8 = 4.656250$).\newline \textbf{Sofía:} Aumento a $n=16$ y $n=32$ ($S_{32} = 4.666016$), tabla comparativa, cálculo de la integral $\frac{14}{3}$ y reducción del error. \\
+\textbf{Escena 2: Refinamiento}\newline{\small\texttt{escena2\_refinamiento.py}} & 2:35 -- 3:00\newline 3:00 -- 3:53 & Renato Carrasco\newline Denys Sofía Rodríguez & \textbf{Renato:} paso de $n=4$ a $n=8$, $\Delta x$ se reduce a la mitad ($0.25$).\newline \textbf{Sofía:} $n=16$ y $n=32$ ($S_{32} = 4.666016$), tabla comparativa, valor exacto $\frac{14}{3}$ y diferencias $0.041667 \to 0.000651$. \\
 \midrule
-\textbf{Escena 3: Límite e Integral}\newline{\small\texttt{escena3\_integral.py}} & 0:00 -- 0:18\newline 0:18 -- 0:23\newline 0:23 -- 0:27.4 & Antonio Lara\newline Paulo Villalobos\newline Todos (Cierre) & \textbf{Antonio:} Explicación del paso al límite ($n\to\infty \implies \Delta x\to 0$), conexión formal entre la suma y la integral $\int_a^b f(x)dx$, y distinción entre ver 32 rectángulos y el concepto de límite.\newline \textbf{Paulo:} Explicación de la fórmula del error $\frac{2}{3n^2} \to 0$.\newline \textbf{Todos:} Respuesta compartida a la pregunta central y créditos. \\
+\textbf{Escena 3: Límite e Integral}\newline{\small\texttt{escena3\_integral.py}} & 3:53 -- 4:29\newline 4:29 -- 5:21 & Antonio Lara\newline Paulo Villalobos & \textbf{Antonio:} refinamiento, $\Delta x=\frac{b-a}{n}\to 0$ cuando $n\to\infty$, el límite de las sumas como integral definida y por qué no se construyen infinitos rectángulos.\newline \textbf{Paulo:} fórmula $S_n=\frac{14}{3}-\frac{2}{3n^2}$ (comprobada con la tabla) y error $\frac{2}{3n^2}$ para $n=4$ y $n=32$, que tiende a cero. \\
+\midrule
+\textbf{Respuesta y cierre} & 5:21 -- 5:40\newline 5:40 -- 5:55 & Paulo, Sofía, Renato\newline Antonio Lara & Respuesta a la pregunta central y conexión con la integral definida.\newline Créditos: integrantes, fuentes, recursos y declaración de IA. \\
 \bottomrule
 \end{tabularx}
 
@@ -257,7 +260,7 @@ En \texttt{scenes/config.py} se centralizan: \texttt{f(x) = x**2 + 1}, \texttt{a
 \begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
     \item \textbf{Apunte de la Asignatura:} Higueras Cheuquepan, N. (2026). \textit{Introducción a la integral}. MAT1188 Cálculo Intermedio, Universidad Católica de Temuco.
     \item \textbf{Libro Complementario 1:} Stewart, J. (2012). \textit{Cálculo de una variable. Trascendentes tempranas} (7.\textsuperscript{a} ed.). Cengage Learning. ISBN 978-607-481-881-9. Secciones 5.1 ("Áreas y distancias", p. 360) y 5.2 ("La integral definida", p. 371).
-    \item \textbf{Libro Complementario 2:} Strang, G. y Herman, E. (2022). \textit{Cálculo}, vol. 1, §5.1 ("Aproximación de áreas"). OpenStax. \url{https://openstax.org/books/calculo-volumen-1/pages/5-1-aproximacion-de-areas}
+    \item \textbf{Libro Complementario 2:} Strang, G. y Herman, E. (2022). \textit{Cálculo}, vol. 1, §5.1 ("Aproximación de áreas"). OpenStax. \href{https://openstax.org/books/c\%C3\%A1lculo-volumen-1/pages/5-1-aproximacion-de-areas}{\nolinkurl{openstax.org/books/cálculo-volumen-1/pages/5-1-aproximacion-de-areas}}
     \item \textbf{Referencia Visual:} Sanderson, G. [3Blue1Brown]. (2017). \textit{Integration and the fundamental theorem of calculus} [Video]. YouTube (min. 8:20--11:18). \url{https://www.youtube.com/watch?v=rfG8ce4nNh0}
     \item \textbf{Documentación de Software:} The Manim Community Developers (2026). \textit{CoordinateSystem} (v0.22.0) -- Método \texttt{get\_riemann\_rectangles}. \url{https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html}
 \end{enumerate}

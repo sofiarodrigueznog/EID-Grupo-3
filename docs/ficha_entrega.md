@@ -21,9 +21,9 @@
 | **Número de Grupo** | Grupo 3 (`G03`) |
 | **Integrantes del Equipo** | Denys Sofía Rodríguez Noguera, Paulo Villalobos Aravena, Antonio Ignacio Lara Fuentealba y Renato Misrrain Carrasco Oviedo |
 | **Repositorio Público de GitHub** | [https://github.com/sofiarodrigueznog/EID-Grupo-3](https://github.com/sofiarodrigueznog/EID-Grupo-3) |
-| **SHA del Commit Entregado** | `80dd10dbef1a4636d771ee8d2f1d2f68e9de9f39` |
+| **SHA del Commit Entregado** | Commit con la etiqueta [`v1.2-entrega`](https://github.com/sofiarodrigueznog/EID-Grupo-3/releases/tag/v1.2-entrega) (el SHA completo figura en la ficha PDF entregada en Blackboard) |
 | **Nombre del Archivo de Video** | `MAT1188_EID_G03_2026.mp4` |
-| **Duración Exacta del Video** | `5 minutos y 57 segundos` *(05:57 min · Rango exigido: 4:00 a 6:00 min)* |
+| **Duración Exacta del Video** | `5 minutos y 55 segundos` *(05:55 min · Rango exigido: 4:00 a 6:00 min, incluye presentación y créditos)* |
 | **Nombre de la Ficha PDF** | `MAT1188_EID_G03_2026.pdf` |
 | **Código de Ética** | Entregado en Blackboard (`MAT1188_ETICA_G03_2026.pdf`) el 06 de octubre de 2026 |
 
@@ -48,7 +48,7 @@ Todos los respaldos del video y la defensa oral se encuentran organizados y acce
 
 | Integrante | Cuenta GitHub | Responsabilidad Principal | Aporte Efectivo al Proyecto |
 | :--- | :--- | :--- | :--- |
-| **Denys Sofía Rodríguez Noguera** *(Líder)* | [@sofiarodrigueznog](https://github.com/sofiarodrigueznog) | Revisión e integración del video | Coordinación general, estructura del repositorio, automatización CI, edición y montaje final del video MP4 (5:57 min), locución y entrega oficial. |
+| **Denys Sofía Rodríguez Noguera** *(Líder)* | [@sofiarodrigueznog](https://github.com/sofiarodrigueznog) | Revisión e integración del video | Coordinación general, estructura del repositorio, automatización CI, edición y montaje final del video MP4 (5:55 min), locución y entrega oficial. |
 | **Paulo Villalobos Aravena** | [@notKechai](https://github.com/notKechai) | Matemática y explicación | Redacción de la teoría (`teoria.md`), desarrollo analítico del ejemplo con puntos medios (`ejemplo.md`), deducción de la fórmula cerrada $S_n$, guion y locución. |
 | **Antonio Ignacio Lara Fuentealba** | [@alara2024uct](https://github.com/alara2024uct) | Visualización y código | Centralización de parámetros en `config.py`, suite de pruebas (`test_config.py`), programación de Escena 1 ($n=4$) y Escena 2 (refinamiento), y locución. |
 | **Renato Misrrain Carrasco Oviedo** | [@RCarrascoO](https://github.com/RCarrascoO) | Apoyo matemática y visualización | Script de auditoría independiente (`verify.py`), runner multiplataforma (`render.py`), programación de Escena 3 (límite e integral), locución y ficha técnica. |
@@ -89,7 +89,7 @@ $$S_n = \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
    * **Integral definida ($\int_0^2 f(x)\,dx$):** Es el número exacto al que se acercan las aproximaciones cuando $n$ tiende a infinito:
      $$\int_0^2 (x^2+1)\,dx = \lim_{n\to\infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x = \frac{14}{3}$$
 
-### C. Cálculos del Ejemplo y Deducción de la Fórmula (V2a–d)
+### C. Cálculos del Ejemplo y Deducción de la Fórmula (V2b–e)
 El **valor analítico exacto** del área se obtiene mediante la regla de Barrow (evaluando la primitiva):
 $$\int_0^2 (x^2 + 1)\,dx = \left[ \frac{x^3}{3} + x \right]_0^2 = \frac{2^3}{3} + 2 = \frac{8}{3} + 2 = \frac{14}{3} \approx 4.666667$$
 
@@ -128,14 +128,15 @@ $$\int_0^2 (x^2 + 1)\,dx = \left[ \frac{x^3}{3} + x \right]_0^2 = \frac{2^3}{3} 
 
 ## 5. Escenas de Manim y Participación en el Video (Criterios V4, V5, V6)
 
-Las escenas fueron desarrolladas en **Manim Community v0.22.0** (Python 3.12). Todos los gráficos y tablas toman sus valores de `scenes/config.py`. En el video, de **5:57 minutos** de duración, los cuatro integrantes participan explicando contenido matemático con su propia voz y son identificados por su nombre en pantalla:
+Las escenas fueron desarrolladas en **Manim Community v0.22.0** (Python 3.12). Todos los gráficos y tablas toman sus valores de `scenes/config.py`. En el video, de **5:55 minutos** de duración, los cuatro integrantes participan explicando contenido matemático con su propia voz y son identificados por su nombre en pantalla:
 
 | Escena / Archivo | Tramo en Video | Integrante (Voz) | Contenido Explicado y Animación |
 | :--- | :---: | :--- | :--- |
-| **Presentación** | Inicio | **Sofía Rodríguez** | Título del proyecto, tema del eje de aproximación, grupo e integrantes. |
-| **Escena 1: Construcción ($n=4$)**<br>`escena1_construccion.py` | 0:00 – 0:09<br>0:09 – 0:22<br>0:22 – 0:29.5 | **Paulo Villalobos**<br>**Sofía Rodríguez**<br>**Renato Carrasco** | • **Paulo:** Presentación de la curva $f(x)=x^2+1$ en $[0,2]$ y planteamiento de la pregunta central.<br>• **Sofía:** División en $n=4$ partes, cálculo de $\Delta x = 0.5$ y ubicación de los puntos medios.<br>• **Renato:** Construcción de los 4 rectángulos uno a uno, cálculo del primer rectángulo ($A_1 = 0.53125$) y suma total $S_4 = 4.625$. |
-| **Escena 2: Refinamiento**<br>`escena2_refinamiento.py` | 0:00 – 0:17<br>0:17 – 0:35.2 | **Renato Carrasco**<br>**Sofía Rodríguez** | • **Renato:** Paso de $n=4$ a $n=8$, reducción del ancho $\Delta x$ de $0.5$ a $0.25$ y cambio en la suma ($S_8 = 4.656250$).<br>• **Sofía:** Aumento a $n=16$ y $n=32$ ($S_{32} = 4.666016$), llenado de la tabla comparativa, cálculo de la integral $\frac{14}{3}$ y reducción del error. |
-| **Escena 3: Límite e Integral**<br>`escena3_integral.py` | 0:00 – 0:18<br>0:18 – 0:23<br>0:23 – 0:27.4 | **Antonio Lara**<br>**Paulo Villalobos**<br>**Todos (Cierre)** | • **Antonio:** Explicación del paso al límite ($n\to\infty \implies \Delta x\to 0$), conexión formal entre la suma y la integral $\int_a^b f(x)dx$, y distinción entre ver 32 rectángulos y el concepto de límite.<br>• **Paulo:** Explicación de la fórmula del error $\frac{2}{3n^2} \to 0$.<br>• **Todos:** Respuesta compartida a la pregunta central y créditos bibliográficos. |
+| **Presentación** | 0:00 – 0:17 | **Denys Sofía Rodríguez** | Título del proyecto, curso, grupo, integrantes, tema y pregunta central (en pantalla). |
+| **Escena 1: Construcción ($n=4$)**<br>`escena1_construccion.py` | 0:17 – 0:47<br>0:47 – 1:41<br>1:41 – 2:35 | **Paulo Villalobos**<br>**Denys Sofía Rodríguez**<br>**Renato Carrasco** | • **Paulo:** función $f(x)=x^2+1$ en $[0,2]$, condiciones ($f$ continua y positiva) y pregunta central.<br>• **Sofía:** partición regular en $n=4$, cálculo de $\Delta x = 0.5$, punto muestra (punto medio) y área $f(x_i^{\ast})\Delta x$.<br>• **Renato:** $S_4=\frac{37}{8}=4.625$, cálculo paso a paso de $A_1 = 0.53125$ y significado de $S_n=\sum f(x_i^{\ast})\Delta x$. |
+| **Escena 2: Refinamiento**<br>`escena2_refinamiento.py` | 2:35 – 3:00<br>3:00 – 3:53 | **Renato Carrasco**<br>**Denys Sofía Rodríguez** | • **Renato:** paso de $n=4$ a $n=8$, $\Delta x$ se reduce a la mitad ($0.25$).<br>• **Sofía:** $n=16$ y $n=32$ ($S_{32} = 4.666016$), tabla comparativa, valor exacto $\frac{14}{3}$ y diferencias $0.041667 \to 0.000651$. |
+| **Escena 3: Límite e Integral**<br>`escena3_integral.py` | 3:53 – 4:29<br>4:29 – 5:21 | **Antonio Lara**<br>**Paulo Villalobos** | • **Antonio:** refinamiento, $\Delta x=\frac{b-a}{n}\to 0$ cuando $n\to\infty$, el límite de las sumas como integral definida y por qué no se construyen infinitos rectángulos.<br>• **Paulo:** fórmula $S_n=\frac{14}{3}-\frac{2}{3n^2}$ (comprobada con la tabla) y error $\frac{2}{3n^2}$ para $n=4$ y $n=32$, que tiende a cero. |
+| **Respuesta y cierre** | 5:21 – 5:40<br>5:40 – 5:55 | **Paulo, Sofía, Renato**<br>**Antonio Lara** | • Respuesta a la pregunta central y conexión con la integral definida.<br>• Créditos: integrantes, fuentes, recursos y declaración de IA. |
 
 ---
 
