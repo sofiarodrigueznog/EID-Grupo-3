@@ -28,6 +28,8 @@ $$
 
 También podríamos utilizar los extremos izquierdos o derechos, pero en este caso vamos a utilizar los puntos medios para calcular la suma de Riemann.
 
+**Condiciones del ejemplo.** $f(x)=x^2+1$ es un polinomio, por lo que es **continua** en $[0,2]$ y, por lo tanto, **integrable**: las sumas de Riemann tienen un límite cuando $n\to\infty$ y ese límite es la integral definida. Además $f(x)>0$ en todo el intervalo, así que cada $S_n$ aproxima el **área geométrica** bajo la curva. Usamos una **partición regular** (todos los subintervalos miden $\Delta x$) y cada punto muestra está dentro de su subintervalo, $x_i^{\ast}\in[x_{i-1},x_i]$.
+
 ## 2. Fórmula que vamos a utilizar
 
 Como el intervalo es $[0,2]$, el ancho de cada subintervalo se calcula de la siguiente manera:
@@ -118,6 +120,34 @@ S_n=\frac{14}{3}-\frac{2}{3n^2}
 $$
 
 Esta expresión permite calcular la suma de Riemann para los distintos valores de $n$ sin tener que escribir cada rectángulo por separado.
+
+### Deducción de la fórmula de $S_n$
+
+Con puntos medios, $x_i^{\ast}=\frac{2i-1}{n}$, así que $f(x_i^{\ast})=\frac{(2i-1)^2}{n^2}+1$ y $\Delta x=\frac{2}{n}$:
+
+```math
+S_n=\sum_{i=1}^{n}\left[\frac{(2i-1)^2}{n^2}+1\right]\frac{2}{n}=\frac{2}{n^3}\sum_{i=1}^{n}(2i-1)^2+\frac{2}{n}\cdot n
+```
+
+La suma de los cuadrados de los $n$ primeros impares se obtiene restando los cuadrados pares a la suma de los cuadrados de $1$ a $2n$ (usando $\sum_{k=1}^{m}k^2=\frac{m(m+1)(2m+1)}{6}$):
+
+```math
+\sum_{i=1}^{n}(2i-1)^2=\sum_{k=1}^{2n}k^2-4\sum_{j=1}^{n}j^2=\frac{2n(2n+1)(4n+1)}{6}-\frac{4n(n+1)(2n+1)}{6}=\frac{n(4n^2-1)}{3}
+```
+
+Reemplazando:
+
+```math
+S_n=\frac{2}{n^3}\cdot\frac{n(4n^2-1)}{3}+2=\frac{8}{3}-\frac{2}{3n^2}+2=\frac{14}{3}-\frac{2}{3n^2}
+```
+
+**Comprobación con la tabla:** para $n=4$, $\frac{14}{3}-\frac{2}{48}=\frac{224-2}{48}=\frac{37}{8}=S_4$. La fórmula y la deducción también se verifican con `python verify.py`, que calcula cada $S_n$ rectángulo por rectángulo.
+
+Como $\frac{2}{3n^2}>0$, todas las sumas quedan por debajo de $\frac{14}{3}$, y como $\frac{2}{3n^2}\to 0$ cuando $n\to\infty$:
+
+```math
+\lim_{n\to\infty}S_n=\frac{14}{3}=\int_0^2 (x^2+1)\ dx
+```
 
 Por ejemplo, cuando $n=8$:
 
